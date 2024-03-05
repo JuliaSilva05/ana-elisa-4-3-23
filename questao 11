@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void xxx(int mnts, int *h, int *m){
+  *h = mnts / 60;
+  *m = mnts % 60;
+  // m<60 e 60*m+m = mnts
+}
+
+int main(void) {
+  int mnts;
+  int h;
+  int m;
+  int *ph = &h;
+  int *pm = &m;
+  
+  printf("Digite uma quantidade de minutos\n");
+  scanf("%d", &mnts);
+  xxx(mnts,ph, pm);
+
+  printf("Horas: %d\nMinutos: %d\n", *ph, *pm);
+  
+  return 0;
+}
