@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct habit{
+  char sexo[1];
+  float altura;
+  int idade;
+  char cor[1];
+};
+
+
+int main(void) {
+  printf("Diga quantos habitantes a cidade possui: ");
+  int n;
+  int count=0;
+  scanf("%d", &n);
+  struct habit a;
+
+  
+  
+  int maiorIdade = 0;  
+  float mediaIdade = 0;
+  for (int i = 0; i < n; i++){
+    printf("\nInsira a idade da pessoa %d: ", i+1);
+    scanf("%d", &a.idade);
+    printf("Insira a altura da pessoa %d: ", i+1);
+    scanf("%f", &a.altura);
+    printf("Insira o sexo da pessoa %d: ", i+1);
+    scanf("%s", a.sexo);
+    printf("Insira a cor dos olhos da pessoa %d: ", i+1);
+    scanf("%s", a.cor);
+    if (a.idade > maiorIdade){
+      maiorIdade = a.idade;
+      printf("%d\n",maiorIdade);
+    }
+    if (a.altura > 1.60 && strcmp(a.cor, "C")==0){
+      mediaIdade = a.idade + mediaIdade;
+      count++;
+      printf("%d ks ",count);
+    }
+  }
+
+  printf("\nA maior idade é: %d\n", maiorIdade);
+  mediaIdade = mediaIdade / (count-1);
+  printf("A média das idades das pessoas com olhos castanhos que tem altura superior a 1.60 é: %.2f\n\n", mediaIdade/n);
+  
+  
+  return 0;
+}
