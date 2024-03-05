@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+
+  char key, choice;
+  int num, count;
+  long date;
+  float yield;
+  double price;
+  
+  char *pkey = &key;
+  char *pchoice = &choice;
+  int *pnum = &num;
+  int *pcount = &count;
+  long *pdate = &date;
+  float *pyield = &yield;
+  double *pprice = &price;
+  
+  printf("Endereço de key: %p\n", pkey);
+  printf("Endereço de choice: %p\n", pchoice);
+  printf("Endereço de num: %p\n", pnum);
+  printf("Endereço de count: %p\n", pcount);
+  printf("Endereço de date: %p\n", pdate);
+  printf("Endereço de yield: %p\n", pyield);
+  printf("Endereço de price: %p\n", pprice);
+
+  pkey = (char *) malloc(sizeof(char));
+  pchoice = (char *) malloc(sizeof(char));
+  pnum = (int *) malloc(sizeof(int));
+  pcount = (int *) malloc(sizeof(int));
+  pdate = (long *) malloc(sizeof(long));
+  pyield = (float *) malloc(sizeof(float));
+  pprice = (double *) malloc(sizeof(double));
+
+  int mchar = sizeof(char);
+  printf("\nMemória reservada para char: %d\n",mchar);
+  int mchoice = sizeof(char);
+  printf("Memória reservada para char: %d\n",mchoice);
+  int mnum = sizeof(int);
+  printf("Memória reservada para int: %d\n",mnum);
+  int mcount = sizeof(int);
+  printf("Memória reservada para int: %d\n",mcount);
+  int mdate = sizeof(long);
+  printf("Memória reservada para long: %d\n",mdate);
+  int myield = sizeof(float);
+  printf("Memória reservada para float: %d\n",myield);
+  int mprice = sizeof(double);
+  printf("Memória reservada para double: %d\n",mprice);
+  printf("\nEndereço de key: %p\n", pkey);
+  printf("Endereço de choice: %p\n", pchoice);
+  printf("Endereço de num: %p\n", pnum);
+  printf("Endereço de count: %p\n", pcount);
+  printf("Endereço de date: %p\n", pdate);
+  printf("Endereço de yield: %p\n", pyield);
+  printf("Endereço de price: %p\n", pprice);
+  
+  
+  return 0;
+  
+}
